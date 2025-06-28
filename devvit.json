@@ -1,6 +1,6 @@
 {
   "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
-  "name": "Snoo Royale: Last Snoo Standing",
+  "name": "Snoo Royale",
   "post": {
     "client": {
       "dir": "dist/client",
