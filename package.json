@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "Snoo Royale",
+  "name": "snoo-royale",
   "version": "0.0.0",
   "license": "BSD-3-Clause",
   "type": "module",
@@ -11,7 +11,7 @@
     "deploy": "npm run build:client && npm run build:server && devvit upload",
     "dev": "concurrently -p \"[{name}]\" -n \"CLIENT,SERVER,DEVVIT\" -c \"blue,green,magenta\" \"npm run dev:client\" \"npm run dev:server\" \"npm run dev:devvit\" --restart-tries 2",
     "dev:client": "cd src/client && vite build --watch",
-    "dev:devvit": "devvit playtest runningwithsnoo",
+    "dev:devvit": "devvit playtest snoo-royale",
     "dev:server": "cd src/server && vite build --watch",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
