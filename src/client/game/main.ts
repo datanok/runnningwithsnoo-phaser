@@ -1,20 +1,40 @@
 import { Boot } from './scenes/Boot';
 import { GameOver } from './scenes/GameOver';
-import { Game as MainGame } from './scenes/Game';
+import { GameLobby } from './scenes/GameLobby';
+import { BattleRoyale } from './scenes/BattleRoyale';
+import { Victory } from './scenes/Victory';
 import { MainMenu } from './scenes/MainMenu';
 import * as Phaser from 'phaser';
 import { AUTO, Game } from 'phaser';
 import { Preloader } from './scenes/Preloader';
 
-//  Find out more information about the Game Config at:
-//  https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
+//  Snoo Royale Game Configuration
 const config: Phaser.Types.Core.GameConfig = {
   type: AUTO,
   width: 1024,
   height: 768,
   parent: 'game-container',
-  backgroundColor: '#028af8',
-  scene: [Boot, Preloader, MainMenu, MainGame, GameOver],
+  backgroundColor: '#0f1419',
+  scene: [Boot, Preloader, MainMenu, GameLobby, BattleRoyale, Victory, GameOver],
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      debug: false
+    }
+  },
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    min: {
+      width: 800,
+      height: 600
+    },
+    max: {
+      width: 1600,
+      height: 1200
+    }
+  }
 };
 
 const StartGame = (parent: string) => {
